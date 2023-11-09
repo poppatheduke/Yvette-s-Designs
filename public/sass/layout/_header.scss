@@ -1,0 +1,38 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary-light, 0.8),
+      rgba($color-secondary-dark, 0.8)
+    ),
+    url(images/image1.jpg);
+  
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+  position: relative;
+
+  @include respond(tab-port) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    background-position: center;
+  }
+
+  &__logo-box {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__logo {
+    width: 20rem;
+  }
+  &__text-box {
+    color: $color-white;
+    width: 75%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
