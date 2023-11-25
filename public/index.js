@@ -22,39 +22,14 @@ function hidePopup() {
 // Call the function to hide the pop-up after 3 seconds
 setTimeout(hidePopup, 3000);
 // Select the checkbox, background, and list items
-const checkbox = document.querySelector('.navigation__checkbox');
-const background = document.querySelector('.navigation__background');
-const listItems = document.querySelectorAll('.navigation__item');
+const checkBox = document.querySelector(".navigation__checkbox");
+const button = document.querySelector(".navigation__button");
+const background = document.querySelector(".navigation__background");
 
-// Function to add the enlarged class
-function addEnlargedClass() {
-  background.classList.add('enlarged');
-  listItems.forEach((item) => {
-    item.classList.add('visible');
+const listItem = document.querySelectorAll(".navigation__link");
+
+for (i = 0; i < listItem.length; i++) {
+  listItem[i].addEventListener("click", () => {
+    button.click();
   });
 }
-
-// Function to remove the enlarged class
-function removeEnlargedClass() {
-  background.classList.remove('enlarged');
-  listItems.forEach((item) => {
-    item.classList.remove('visible');
-  });
-}
-
-// Add a click event listener to the checkbox (button)
-checkbox.addEventListener('click', () => {
-  if (checkbox.checked) {
-    addEnlargedClass();
-  } else {
-    removeEnlargedClass();
-  }
-});
-
-// Add a click event listener to each list item to reset the navigation
-listItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    removeEnlargedClass();
-    checkbox.checked = false; // Uncheck the checkbox
-  });
-});

@@ -184,8 +184,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
   left: 0;
   z-index: 1500;
   opacity: 0;
+  visibility: hidden;
   width: 0;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 .navigation__list {
   position: absolute;
@@ -209,7 +210,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
   background-size: 220%;
-  transition: all 0.4s; }
+  transition: all 0.3s; }
   .navigation__link:link span, .navigation__link:visited span {
     margin-right: 1.5rem;
     display: inline-block; }
@@ -223,6 +224,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   transform: scale(80); }
 
 .navigation__checkbox:checked ~ .navigation__nav {
+  visibility: visible;
   opacity: 1;
   width: 100%; }
 
@@ -260,18 +262,6 @@ ORDER: Base + typography > general layout + grid > page layout > components
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
   top: 0;
   transform: rotate(-135deg); }
-
-/* Add this to your existing CSS */
-.navigation__background.enlarged {
-  transform: scale(80); }
-
-.navigation__item {
-  display: none;
-  transition: visibility 0.3s ease;
-  /* Add a transition for visibility */ }
-
-.navigation__item.visible {
-  display: block; }
 
 @keyframes moveInLeft {
   0% {
