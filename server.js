@@ -26,20 +26,13 @@ app.get("/", function (req, res) {
 });
 app.post("/", function (req, res) {
   console.log(req.body);
-  fsPromises.writeFile(
-    path.join("__dirname", "..", "model", "user.json"),
-    JSON.stringify(req.body)
-  );
+
   res.send(
     "Post received. We will get back to you within 24 hours, " +
       req.body.fullName +
       "."
   );
 });
-
-
-
-
 
 app.listen(3000, function () {
   console.log("Server is running at port 3000");
